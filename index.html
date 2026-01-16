@@ -2,23 +2,20 @@
 <html>
   <head>
     <title>template-title</title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <!-- Libraries -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.5/dist/mindar-image.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.5/dist/mindar-image-aframe.prod.js"></script>
-
-    <!-- Gesture scripts -->
     <script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
   </head>
 
   <body>
-    <a-scene
+    <a-scene 
       mindar-image="imageTargetSrc: targets.mind; filterMinCF: 0.0001; filterBeta: 1; maxTrack: 2"
       color-space="sRGB"
       renderer="colorManagement: true; physicallyCorrectLights: true"
@@ -28,22 +25,18 @@
       gesture-detector
     >
 
-      <!-- Assets -->
       <a-assets>
         <a-asset-item id="template1" src="template1.glb"></a-asset-item>
         <a-asset-item id="template2" src="template2.gltf"></a-asset-item>
       </a-assets>
 
-      <!-- Camera (MindAR controlled) -->
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <!-- Target 0 -->
       <a-entity mindar-image-target="targetIndex: 0">
         <a-entity
-          id="template1-model"
           gltf-model="#template1"
           position="0 0 0"
-          rotation="0 0 0"
           scale="1 1 1"
           gesture-handler
           animation-mixer
@@ -53,10 +46,8 @@
       <!-- Target 1 -->
       <a-entity mindar-image-target="targetIndex: 1">
         <a-entity
-          id="template2-model"
           gltf-model="#template2"
           position="0 0 0"
-          rotation="0 0 0"
           scale="0.3 0.3 0.3"
           gesture-handler
           animation-mixer
@@ -66,3 +57,4 @@
     </a-scene>
   </body>
 </html>
+
